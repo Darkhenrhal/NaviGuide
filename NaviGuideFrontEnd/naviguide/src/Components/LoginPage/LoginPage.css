@@ -1,0 +1,59 @@
+#LoginFormDiv {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #topic_Login {
+    text-align: center;
+  }
+  
+  .inputs {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  
+  #forgotpass_Login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  #button_Login {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #btnSign,
+  #btnGSign {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  #btnGSign {
+    background-color: #4285F4; /* Google sign-in color */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007BFF; /* Bootstrap's primary color */
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

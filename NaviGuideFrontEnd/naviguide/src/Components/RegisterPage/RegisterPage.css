@@ -1,0 +1,137 @@
+#head{
+  border: 20px;
+  background-image: url('C:\Users\sinet\Documents\Software Projects\NaviGuide\naviguide\naviguideFrontEnd\src\Assests\images\registerBackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#RegisterFormDiv {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  padding-top: 0%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 80%;
+ 
+
+ 
+}
+
+/* Other styles remain unchanged */
+
+
+
+#topic_Reg {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#content {
+  display: block;
+}
+
+#fname{
+  margin-left: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width:auto;
+  gap: 5px;
+  
+
+}
+
+.card {
+  flex: 1;
+  margin: 10px;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  
+}
+
+#pass {
+  display: flex;
+  flex-wrap: wrap;
+  width:auto;
+  gap: 5px;
+}
+
+.inputs {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 0%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.finputs{
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#button_Reg {
+  margin-top: 0%;
+  text-align: center;
+}
+
+.btnRegister {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#GRegister {
+  background-color: #4285f4;
+}
+
+#errors {
+  margin-bottom: 10px;
+  line-height: 8px;
+  line-gap-override: 10px;
+  text-align: left;
+}
+
+p {
+  margin: 10px 0;
+}
+
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.cardsingle{
+  flex: 1;
+  margin: 10px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.inputssingle{
+  width: 95.8%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.check{
+  display: flex;
+}
