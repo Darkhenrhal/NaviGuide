@@ -1,15 +1,18 @@
-package model;
+package com.naviguide.naviguide.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collation = "Users")
+@Document//(collation = "Users")
 public class Users {
+    @Id
+    private int  userid;
     private String firstName;
     private String lastName;
     private int phoneNumber;
@@ -23,5 +26,4 @@ public class Users {
     private String rePassword;
     private String userType;
 
-    private String set firstName
 }
