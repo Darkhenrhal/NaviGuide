@@ -1,15 +1,19 @@
 package com.naviguide.naviguide.model;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
+import java.util.List;
 
 
 @Data
+@Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "users")
@@ -28,6 +32,8 @@ public class Users {
     private String password;
     private String rePassword;
     private String userType;
+
+    private List<Events> events;
 
     public Users(String userid, String firstName, String lastName, String phoneNumber, String altPhoneNumber, String organizationName, String email, String accCategory, String proffesion, String userName, String password, String userType) {
         this.userId = userid;

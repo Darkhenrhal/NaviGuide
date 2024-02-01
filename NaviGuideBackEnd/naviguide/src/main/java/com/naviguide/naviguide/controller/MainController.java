@@ -3,10 +3,11 @@ package com.naviguide.naviguide.controller;
 
 import com.naviguide.naviguide.model.Users;
 import com.naviguide.naviguide.service.UserService;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
+import com.naviguide.naviguide.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -18,46 +19,48 @@ public class MainController {
     private UserService userServices;
 
     @PostMapping(value = "/save")//working
-    private String saveUser(@RequestBody Users users) {
-        userServices.saveOrUpdate(users);
-        return users.getUserid();
+    private String saveUser(@RequestBody Users user) {
+        return userServices.save(user);
     }
 
-    @PutMapping(value = "/edit/{userId}")//working
-    private Users update(@RequestBody Users users,@PathVariable(name = "userId") String userId){
-        users.setUserid(userId);
-        userServices.saveOrUpdate(users);
-        return users;
+    @GetMapping(value = "getUser/{userName}")
+    public Users getUserByUserName(@PathVariable("userName") String userName){
+        return userServices.getUserByUserName(userName);
     }
 
-    @DeleteMapping(value = "/delete/{userId}")
-    private void deleteUser(@PathVariable("userId") String userId){
-        userServices.deleteUser(userId);
-    }
-
-    @RequestMapping(value = "/search/{userId}")
-    private Users getUsers(@PathVariable(name = "userId") String userId){
-        return userServices.getUserByid(userId);
-    }
-
-    @RequestMapping(value = "/search/{userName}")
-    private Users getUserByUserName(@PathVariable(name="userName") String userName){
-        System.out.println("im at 1");
-        //return userServices.getUserByUsername(userName);
-        Users user = userServices.getUserByUsername(userName);
-
-        if (user != null) {
-            // Print user information
-            System.out.println("User found: " + user.toString());
-
-            // You can also return the user information as JSON or any other format
-
-        } else {
-            // Print a message indicating that the user was not found
-            System.out.println("User not found with username: " + userName);
-
-            // You can also return an appropriate response, such as an error messag
-        }
+    @PutMapping(value = "/updateUser/{userName}")
+    public Users updateUser(@RequestBody Users user,@PathVariable(name="userName") String userName){
+        user.setUserName(userName);
+        userServices.update(user);
         return user;
     }
+
+    @DeleteMapping(value = "/deleteUser/{userName}")
+    public void delete(@PathVariable String userName){
+        userServices.deleteUser(userName);
+    }
+    @GetMapping(value = "/getCat/{accCategory}")
+    public List<Users> getByAccCatagory(@PathVariable String accCategory ){
+        return userServices.getByAccCatagory(accCategory);
+    }
+//    @PutMapping(value = "/edit/{userId}")//working
+//    private Users update(@RequestBody Users users,@PathVariable(name = "userId") String userId){
+//        users.setUserid(userId);
+//        userServices.saveOrUpdate(users);
+//        return users;
+//    }
+
+
+//
+//    @DeleteMapping(value = "/delete/{userId}")
+//    private void deleteUser(@PathVariable("userId") String userId){
+//        userServices.deleteUser(userId);
+//    }
+//
+//    @RequestMapping(value = "/search/{userId}")
+//    private Users getUsers(@PathVariable(name = "userId") String userId){
+//        return userServices.getUserByid(userId);
+//    }
+//
+
 }

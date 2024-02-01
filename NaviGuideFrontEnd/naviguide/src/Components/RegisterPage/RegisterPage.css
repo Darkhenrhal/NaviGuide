@@ -1,19 +1,24 @@
-#head{
-  border: 20px;
+
+
+#regSection{
   background-image: url('C:\Users\sinet\Documents\Software Projects\NaviGuide\naviguide\naviguideFrontEnd\src\Assests\images\registerBackground.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 729px;
 }
+
 #RegisterFormDiv {
+
   max-width: 600px;
+  margin-top: 20px;
   margin: auto;
   padding: 20px;
   padding-top: 0%;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 80%;
+  height: 690px;
  
 
  

@@ -18,7 +18,8 @@ const LoginForm = () => {
   }
 
   return (
-    <div id="LoginFormDiv">
+    <section>
+            <div id="LoginFormDiv">
       <div id="topic_Login">
         <h2>Sign in</h2>
       </div>
@@ -61,6 +62,8 @@ const LoginForm = () => {
         </div>
       </form>
     </div>
+    </section>
+
   );
 }
 

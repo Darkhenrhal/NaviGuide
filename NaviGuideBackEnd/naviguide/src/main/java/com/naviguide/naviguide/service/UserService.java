@@ -1,42 +1,29 @@
 package com.naviguide.naviguide.service;
 
 import com.naviguide.naviguide.model.Users;
-import com.naviguide.naviguide.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
+import java.util.List;
 
-public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+public interface UserService {
+    //void saveOrUpdate(Users users);
 
-    public void saveOrUpdate(Users users){
-        userRepository.save(users);
+    //Iterable<Users> listAll();
 
-    }
+    String save(Users user);
 
-    public Iterable<Users> listAll() {
-        return this.userRepository.findAll();
-    }
+    Users getUserByUserName(String userName);
 
+    void update(Users user);
 
-    public void deleteUser(String userId) {
-        System.out.println("Im here3");
-        userRepository.deleteById(userId);
-        System.out.println("Im here 4");
-    }
+    void deleteUser(String userName);
 
-    public Users getUserByid(String userId) {
+    List<Users> getByAccCatagory(String accCategory);
 
-        return userRepository.findById(userId).get();
-    }
+    //Users getUserByUserName(String userName);
 
-    public Users getUserByUsername(String username) {
+   // void deleteUser(String userId);
 
-        return userRepository.findByUserName(username);
-    }
+    //Users getUserByid(String userId);
 
-
-
+    //Users getUserByUsername(String username);
 }
