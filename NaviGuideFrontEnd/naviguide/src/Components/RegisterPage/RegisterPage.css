@@ -5,7 +5,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 729px;
+  height: 775px;
 }
 
 #RegisterFormDiv {
@@ -18,7 +18,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 690px;
+  height: 750px;
  
 
  
@@ -57,6 +57,14 @@
   margin-top: 0;
   margin-bottom: 0;
   
+}
+
+.cardtype{
+  flex: 1;
+  margin: 10px;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #pass {

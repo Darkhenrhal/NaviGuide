@@ -14,4 +14,6 @@ public interface UserRepository extends MongoRepository<Users,String> {
 
     @Query(value = "{'accCategory':?0}")
     List<Users> findByAccCategory(String accCategory);
+
+    Users findByEmail(String email);
 }

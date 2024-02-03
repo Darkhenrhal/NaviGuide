@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -26,12 +25,15 @@ public class Users {
     private String altPhoneNumber;
     private String organizationName;
     private String email;
+
+
     private String accCategory;
     private String proffesion;
     private String userName;
     private String password;
-    private String rePassword;
+    private String address;
     private String userType;
+    private String category;
 
     private List<Events> events;
 
@@ -138,12 +140,12 @@ public class Users {
         this.password = password;
     }
 
-    public String getRePassword() {
-        return rePassword;
+    public String getAddress() {
+        return address;
     }
 
-    public void setRePassword(String rePassword) {
-        this.rePassword = rePassword;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getUserType() {
@@ -168,7 +170,7 @@ public class Users {
                 ", proffesion='" + proffesion + '\'' +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", rePassword='" + rePassword + '\'' +
+                ", rePassword='" + address + '\'' +
                 ", userType='" + userType + '\'' +
                 '}';
     }
