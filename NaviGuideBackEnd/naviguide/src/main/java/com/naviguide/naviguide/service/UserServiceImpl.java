@@ -39,6 +39,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<Users> getAllUsersByOrg(String organizationName) {
+        return userRepository.findByorganizationName(organizationName);
+    }
+
+    @Override
+    public Users getByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    @Override
     public void update(Users user) {
         userRepository.save(user);
     }
@@ -74,9 +84,7 @@ public class UserServiceImpl implements UserService {
 
         return userEmails;
     }
-
-
-
+    
     @Override
     public Page<Users> search(String firstName, String lastName, String organizationName, String accCategory, String proffesion, Pageable pageable) {
         Query query=new Query().with(pageable);

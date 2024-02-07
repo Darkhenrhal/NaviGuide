@@ -25,8 +25,6 @@ public class Users {
     private String altPhoneNumber;
     private String organizationName;
     private String email;
-
-
     private String accCategory;
     private String proffesion;
     private String userName;

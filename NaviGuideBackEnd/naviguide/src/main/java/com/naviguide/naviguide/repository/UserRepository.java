@@ -10,10 +10,10 @@ public interface UserRepository extends MongoRepository<Users,String> {
     Users findByUserName(String userName);
     void deleteByUserName(String userName);
 
-    //List<Users> findByAccCatagory(String accCategory);
-
     @Query(value = "{'accCategory':?0}")
     List<Users> findByAccCategory(String accCategory);
 
     Users findByEmail(String email);
+
+    List<Users> findByorganizationName(String organizationName);
 }

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,6 +42,11 @@ public class MainController {
     @GetMapping(value = "getUser/{userName}")//working
     public Users getUserByUserName(@PathVariable("userName") String userName){
         return userServices.getUserByUserName(userName);
+    }
+    //practise
+    @GetMapping(value = "/allusersbyorg/{organizationName}")
+    public List<Users> getAllUsersByOrg(@PathVariable("organizationName") String organizationName){
+        return userServices.getAllUsersByOrg(organizationName);
     }
 
     @GetMapping(value ="getUserByEmail/{email}")//working
@@ -80,5 +87,35 @@ public class MainController {
         Pageable pageable
                 = PageRequest.of(page,size);
                 return userServices.search(firstName,lastName,organizationName,accCategory,proffesion,pageable);
+    }
+
+
+//    @PostMapping(value = "/login")
+//    public String Login(@RequestBody Users loginUser){
+//        String userEmail=loginUser.getEmail();
+//        String password=loginUser.getPassword();
+//
+//        Users user=userServices.getUserByEmail(userEmail);
+//
+//        if(user !=null && user.getPassword().equals(password)){
+//            return "Login Successful";
+//        }else {
+//            return "Invalid Email or Password";
+//
+//        }
+//    }
+
+    @PostMapping(value = "/login")
+    public ResponseEntity<String> login(@RequestBody Users loginUser){
+        String userEmail = loginUser.getEmail();
+        String password = loginUser.getPassword();
+
+        Users user = userServices.getUserByEmail(userEmail);
+
+        if (user != null && user.getPassword().equals(password)) {
+            return ResponseEntity.ok("Login Successful");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid Email or Password");
+        }
     }
 }

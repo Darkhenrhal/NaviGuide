@@ -15,6 +15,8 @@ public interface UserService {
 
     Users getUserByUserName(String userName);
 
+    abstract Users getByEmail(String email);
+
     void update(Users user);
 
     void deleteUser(String userName);
@@ -30,6 +32,8 @@ public interface UserService {
     List<String> getAllUserEmails();
 
     Users getUserByEmail(String email);
+
+    List<Users> getAllUsersByOrg(String organizationName);
 
     //Users getUserByUserName(String userName);
 
