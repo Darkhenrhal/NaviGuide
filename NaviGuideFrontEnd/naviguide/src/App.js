@@ -2,8 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginForm from './Components/LoginPage/LoginPage';
 import RegisterForm from './Components/RegisterPage/RegisterPage';
-import ProfilePage from './Components/Profile/ProfilePage';
+import ProfilePage from './Components/ProfileDashboard/ProfileDashboard';
 import { AuthProvider } from './AuthContext';
+import { Datepicker, Input, initTE } from "tw-elements";
+import Search from './Components/Search/Search';
+import ProfileView from './Components/ProfileView/ProfileView';
+initTE({ Datepicker, Input }, { allowReinits: true });
 
 const App = () => {
   return (
@@ -14,11 +18,16 @@ const App = () => {
 
           <Route path="/login" element={<AuthProvider><LoginForm /></AuthProvider>} />
           
-          //Register page does not need login states so its not include authprovider
           <Route path="/register" element={<RegisterForm />} />
           
-          <Route path="/ProfilePage" element={<AuthProvider><ProfilePage/></AuthProvider>}/>
-        
+          <Route path="/profile" element={<AuthProvider><profilePage/></AuthProvider>}/>
+
+          <Route path="/search" element={<Search/>}/>
+
+          <Route path="/profileview" element={<AuthProvider><ProfileView/></AuthProvider>}/>
+
+          <Route path="/profileview/:userName" element={<AuthProvider><ProfileView/></AuthProvider>}/>
+
         
         </Routes>
     </Router>

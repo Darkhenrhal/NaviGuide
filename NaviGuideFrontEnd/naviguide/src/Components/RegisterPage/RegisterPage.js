@@ -22,6 +22,7 @@ const RegisterForm = () => {
   const [userType,setuserType]=useState('');//pk
   const [userName,setuserName]=useState('');//ok
   const [accCategory,setaccCategory]=useState('');//ok
+  const [accRating,setaccRating]=useState(0);
   const [Users, setUsers] = useState([]);
   const [errors, setErrors] = useState([]);
 
@@ -63,6 +64,11 @@ const RegisterForm = () => {
       return
     }
 
+    if(userType==="stakeholder"){
+      setaccRating("None");
+    }else{
+      setaccRating(0);
+    }
     console.log('No error in Empty inputs');
     save(e);
     navigate('/login')
@@ -110,7 +116,9 @@ const RegisterForm = () => {
               password:password,
               address:address,
               accCategory:accCategory,
-              userType:userType
+              userType:userType,
+              accRating:accRating
+
   
             });
             
@@ -129,6 +137,7 @@ const RegisterForm = () => {
               setpassword("");
               setaddress("");
               setuserType("");
+              setaccRating(0);
               
               Load();
 
@@ -144,8 +153,20 @@ const RegisterForm = () => {
     <section id="regSection">
         <div id="regdiv">
                   <div id="regimage">
+                    <div id="head">
+                      <h1>NaviGuide</h1>
+                    </div>
                     <h1>Registration Guidelines</h1>
-                    <p></p>
+                    
+                      <p>Please fill all the fields</p>
+                      <p>You are not allowed to use Existing Email or Username</p>
+                      <p>Phone number format 0XX XXX XXXX</p>
+                      <p>Pasword should contain</p>
+                          <li>at least 8 characters</li>
+                          <li>at least one uppercase</li>
+                          <li>at least one lowercase</li>
+                          <li>at least one symbol</li>
+                      
                     <div id="errors">
                                     {errors.map((error, index) => (
                                       <p key={index} style={{ color: 'red' }}>{error}</p>
@@ -161,7 +182,7 @@ const RegisterForm = () => {
                       <div id="content" className="content">
 
                         <div className="row">
-                            <div className="card">
+                            <div className="cardreg">
                               <label htmlFor="fname">First Name</label>
                               <input
                                 type="text"
@@ -173,7 +194,7 @@ const RegisterForm = () => {
                                 required
                               />
                             </div>
-                            <div className="card">
+                            <div className="cardreg">
                               <label htmlFor="lname">Last Name</label>
                               <input
                                 type="text"
@@ -189,7 +210,7 @@ const RegisterForm = () => {
                         </div>
 
                         <div className="row">
-                          <div className="cardsingle">
+                          <div className="cardregsingle">
                             <label htmlFor="email">email Address</label>
                                 <input
                                   id="email"
@@ -205,7 +226,7 @@ const RegisterForm = () => {
                           
                           </div>
                           <div className="row">
-                              <div className="card">
+                              <div className="cardreg">
                                 <label htmlFor="userName">Username</label>
                                     <input
                                       id="userName"
@@ -218,7 +239,7 @@ const RegisterForm = () => {
                                     />
                             
                               </div>
-                            <div className="card">
+                            <div className="cardreg">
                               <label htmlFor="accCategory">Account Category</label>
                                   <select 
                                     id="accCatagory"
@@ -244,7 +265,7 @@ const RegisterForm = () => {
                           </div>
                       
                           <div className="row">
-                            <div className="card">
+                            <div className="cardreg">
                                 <label htmlFor="phone">Phone number</label>
                                 <input 
                                   type="text"
@@ -257,7 +278,7 @@ const RegisterForm = () => {
                                   required
                                 />
                             </div>
-                            <div className="card">
+                            <div className="cardreg">
                             <label htmlFor="phone-alt">Phone number (Fixed line)</label>
                                 <input 
                                   type="text"
@@ -271,7 +292,7 @@ const RegisterForm = () => {
                             </div>
                           </div>
                           <div className="row">
-                            <div className="card">
+                            <div className="cardreg">
                               <label htmlFor="oname">Organization Name</label>
                                   <input
                                     type="text"
@@ -282,7 +303,7 @@ const RegisterForm = () => {
                                     onChange={(e) => setorganizationname(e.target.value)}
                                   />
                             </div>
-                            <div className="card">           
+                            <div className="cardreg">           
                                   <label htmlFor="proffesion">proffesion</label>
                                   <input
                                     type="text"
@@ -295,7 +316,7 @@ const RegisterForm = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="cardsingle">
+                            <div className="cardregsingle">
                               <label htmlFor="address">Address</label>
                                     <input 
                                       type="text"
@@ -309,7 +330,7 @@ const RegisterForm = () => {
                         </div>
 
                       <div id="pass">
-                            <div className="card">
+                            <div className="cardreg">
                               <label htmlFor="password">password</label>
                               <input
                                 type="password"
@@ -320,7 +341,7 @@ const RegisterForm = () => {
                                 onChange={(e) => setpassword(e.target.value)}
                               />
                             </div>
-                            <div className="card">
+                            <div className="cardreg">
                               <label htmlFor="repassword">Re-type password</label>
                               <input
                                 id="repassword"
@@ -334,7 +355,7 @@ const RegisterForm = () => {
                       </div>             
                       <div className="check">   
                       <p>Register as</p>
-                            <div className="cardtype">
+                            <div className="cardregtype">
                               
                               <input 
                                 type="checkbox" 
@@ -353,7 +374,7 @@ const RegisterForm = () => {
                                 /><label htmlFor="stake">Stakeholder</label>
 
                             </div>
-                            <div className="card">
+                            <div className="cardreg">
                             <p></p>
                             </div>
                       </div>
