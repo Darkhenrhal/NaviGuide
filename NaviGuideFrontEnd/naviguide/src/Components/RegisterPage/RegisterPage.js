@@ -80,7 +80,7 @@ const RegisterForm = () => {
 
     async function Load(){
       const result=await axios.get(
-        "http://localhost:8080/api/user/getAllUsers");
+        "http://localhost:8080/api/user/getallusers");
            setUsers(result.data);
            console.log(result.data);
     }
@@ -89,13 +89,13 @@ const RegisterForm = () => {
     {
         e.preventDefault();
         // Check if the username or email already exists
-        const existingUser = await axios.get(`http://localhost:8080/api/user/getUser/${userName}`);
+        const existingUser = await axios.get(`http://localhost:8080/api/user/getuser/${userName}`);
         if (existingUser.data) {
           alert('Username is already taken. Please choose a different one.');
           return;
         }
 
-        const existingEmailUser = await axios.get(`http://localhost:8080/api/user/getUserByEmail/${email}`);
+        const existingEmailUser = await axios.get(`http://localhost:8080/api/user/getuserbyemail/${email}`);
         if (existingEmailUser.data) {
           alert('Email is already registered. Please use a different one.');
           return;
@@ -118,8 +118,6 @@ const RegisterForm = () => {
               accCategory:accCategory,
               userType:userType,
               accRating:accRating
-
-  
             });
             
             if(response.status===200){

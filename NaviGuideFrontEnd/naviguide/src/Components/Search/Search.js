@@ -11,7 +11,7 @@ const Search = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8080/api/user/getCat/${searchedAccCatagory}`)
+        fetch(`http://localhost:8080/api/user/getaccbycatagory/${searchedAccCatagory}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
@@ -81,7 +81,7 @@ const Search = () => {
                                     </div>
                                     <div class="button mt-2 d-flex flex-row align-items-center">
                                         <button class="btn btn-sm btn-outline-primary w-100"> 
-                                        <Link to={`/profileview/${user.userName}`}>View Profile</Link>
+                                        <Link to={`/profile/${user.userName}`}>View Profile</Link>
                                         </button>
                                         <button class="btn btn-sm btn-primary w-100 ml-2">Contact</button>                                        
                                     </div>
