@@ -1,6 +1,7 @@
 import React from "react";
-import "./ProfilePage.css";
+import "./ProfileDashboard.css";
 import { useAuth } from "../../AuthContext";
+
 
 
 const ProfilePage = () => {
@@ -15,13 +16,12 @@ const ProfilePage = () => {
             ):(
                 <p>Please log in</p>
             )}
-
-            <div id="user">
-                <div id="image">
-                    <img src="https://drive.google.com/file/d/1sPB5Lp4y4iuWFUSycYeWCTFh-F98Gc4O/view?usp=sharing"/>
-                </div>
-                
-            </div>
+            
+            <script
+            type="text/javascript"
+            src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+            
+ 
                        
         </section>
     );

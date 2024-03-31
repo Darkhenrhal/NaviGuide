@@ -1,0 +1,113 @@
+.stats{
+
+  background: #f2f5f8 !important;
+  color: #000 !important;
+}
+
+
+.imageandtxtcontainer{
+  display: flex;
+}
+.articles{
+font-size:10px;
+color: #a1aab9;
+}
+
+.followers{
+  font-size:14px;
+color: #a1aab9;
+margin: 4px;
+
+}
+
+.rating{
+  font-size:14px;
+  color: #a1aab9;
+  margin: 4px;
+
+}
+.number3,.number2,.number1{
+font-weight:500;
+font-size: 14;
+margin-left: 10px;
+}
+
+.profdetails{
+display: flex;
+align-items: left;
+}
+
+.container {
+margin-top: 5rem; /* Adjust margin as needed */
+display: flex;
+justify-content: center;
+}
+
+.card {
+padding: 1.5rem;
+background-color:#E3F1E7 ;
+
+width: fit-content;
+box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+border-radius: 0.5rem;
+}
+
+.image{
+align-items: left;
+width: 170px;
+height: fit-content;
+}
+
+.image img {
+border-radius: 0.5rem;
+margin-right: 10px;
+width: 155px;
+}
+
+.innerdetails{
+margin-left: 1.5rem; /* Adjust margin as needed */
+width: 80vh;
+flex: left;
+}
+
+.mb-0 {
+margin-bottom: 0;
+font-size: 20px;
+}
+
+.mt-0 {
+margin-top: 0;
+}
+
+.p-2{
+  border-radius:10px ;
+}
+
+
+
+.button {
+margin-top: 0.5rem; 
+display: flex;
+flex-direction: row;
+align-items: center;
+text-decoration: none;
+}
+
+.button button {
+width: 100%;
+text-decoration: none;
+width: fit-content;
+}
+
+.button button + button {
+margin-left: 0.5rem;
+text-decoration: none;
+ 
+}
+
+#linkprofile{
+  text-decoration: none;
+  color: #E3F1E7;
+  width:5vh;
+}
+
