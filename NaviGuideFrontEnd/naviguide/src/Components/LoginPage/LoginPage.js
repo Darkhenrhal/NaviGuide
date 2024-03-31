@@ -34,10 +34,8 @@ const LoginForm = () => {
         
         const userData={
           email:email,
-          //here put other details of  user if needed
         };
         login(userData);
-        //put the redirect profile page here.
         
         navigate('/ProfilePage');
         alert("Login Successfull");

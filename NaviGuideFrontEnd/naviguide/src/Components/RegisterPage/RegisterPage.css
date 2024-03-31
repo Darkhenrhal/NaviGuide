@@ -11,7 +11,7 @@
     display: flex;
     background-color: #38A3A5;
     width: 80%;
-    height: 120vh;
+    height: 124vh;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.107);
     border-radius: 20px;
     margin-top: 0vh;
@@ -66,7 +66,7 @@
     border-radius: 15px;
     width: 50%;
     margin: 2.5vh;
-    height: 115vh;
+    height: 119vh;
 }
 
 #RegisterFormDiv form{
@@ -196,12 +196,15 @@
   #buttons{
     align-items: center;
     width: 100%;
+    margin-bottom: 1.2vh;
+    margin-top: 1.2vh;   
   }
   
   #button_Reg {
     
       text-align: center; 
-      margin-top: 1.2vh;    
+      margin-top: 1.2vh; 
+      margin-bottom: 1.2vh;   
     
     
   }

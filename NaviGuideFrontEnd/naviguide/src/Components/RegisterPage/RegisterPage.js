@@ -65,9 +65,11 @@ const RegisterForm = () => {
     }
 
     if(userType==="stakeholder"){
-      setaccRating("None");
+      setaccRating(null);
+      alert(accRating);
     }else{
       setaccRating(0);
+      alert(accRating);
     }
     console.log('No error in Empty inputs');
     save(e);
@@ -102,24 +104,22 @@ const RegisterForm = () => {
         }
         try
             {
-            const response=await axios.post("http://localhost:8080/api/user/save",
-            
-            {
-              firstName:firstName,
-              lastName:lastName,
-              phoneNumber:phoneNumber,
-              altPhoneNumber:altPhoneNumber,
-              organizationName:organizationName,
-              email:email,
-              proffesion:proffesion,
-              userName:userName,
-              password:password,
-              address:address,
-              accCategory:accCategory,
-              userType:userType,
-              accRating:accRating
-            });
-            
+              const response = await axios.post("http://localhost:8080/api/user/save", {
+                firstName: firstName,
+                lastName: lastName,
+                phoneNumber: phoneNumber,
+                altPhoneNumber: altPhoneNumber,
+                organizationName: organizationName,
+                email: email,
+                proffesion: proffesion,
+                userName: userName,
+                password: password,
+                address: address,
+                accCategory: accCategory,
+                userType: userType,
+                accRating: accRating 
+              });
+              
             if(response.status===200){
               //Registration is successfull here
               alert("User Registered Successfully");
