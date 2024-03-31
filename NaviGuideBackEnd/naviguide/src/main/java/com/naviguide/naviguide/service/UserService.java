@@ -35,9 +35,11 @@ public interface UserService {
 
     List<Users> getAllUsersByOrg(String organizationName);
 
+
+
     //Users getUserByUserName(String userName);
 
-   // void deleteUser(String userId);
+    // void deleteUser(String userId);
 
     //Users getUserByid(String userId);
 
