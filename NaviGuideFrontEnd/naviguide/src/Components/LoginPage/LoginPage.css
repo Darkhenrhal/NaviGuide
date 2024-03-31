@@ -125,7 +125,7 @@
   margin: 4vh;
 }
 
-.btn {
+.btn,.btn a {
   margin: 0 10px;
   padding: 1.2vh 2vh;
   background: #38A3A5;
@@ -136,13 +136,16 @@
   letter-spacing: 0.1rem;
   font-weight: 600;
   transition: background-color 0.5s, transform 0.5s ease;
+  text-decoration: none;
 }
 
-.btn:hover {
+
+
+.btn:hover,.btn a:hover {
   background: #2c7a7c; /* darker shade of the original background color */
   transform: scale(1.05); /* scale up slightly on hover */
 }
 
-.btn:active {
+.btn:active,.btn a:active {
   transform: scale(0.95); /* scale down slightly when clicked */
 }
