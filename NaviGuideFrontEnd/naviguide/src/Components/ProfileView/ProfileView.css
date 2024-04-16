@@ -9,6 +9,7 @@
 .image{
     text-align: center;
     width: fit-content;
+    align-items: center;
 }
 #pvcoverimg{
     width: 100%; 
@@ -34,9 +35,22 @@
     box-shadow:  0 0 10px 10px rgba(255, 255, 255, 0.25);
 }
 
+#pvcontacts h5{
+  color: #5a5a5b;
+}
+
+#pvposition{
+  color: #5a5a5b;
+
+}
+
+#pvcontacts{
+  margin-right: 10px;
+}
+
 .pvdetails{
     margin-left: 2vh;
-    width: 115vh;
+    width: 120vh;
 }
 
 
@@ -44,9 +58,6 @@
     margin:10vh 0 0 0;
     font-size: 4vh;
     color: rgb(11, 86, 152);
-}
-
-.pvdetails #pvposistion{
 }
 
 .pvdetails #pvabout{
@@ -61,7 +72,6 @@
 #pvevents{
     position: absolute;
     top: 80vh;
-    
     width: 100%;
 }
 
@@ -94,9 +104,12 @@
 
   #pvprofilelinks #fblink{
     text-decoration: none;
-    color: black;
+    color: #5a5a5b;
   }
 
+  #pvposistion h3,#pvratecard h1{
+    color: #5a5a5b;
+  }
 
   #pvevents{
     
@@ -105,15 +118,15 @@
     margin:1% 0 0 0;
     text-align: center;
     font-size: 4vh;
-    color: rgb(11, 86, 152);
+    color: #0b5698;
   }
 
-  #pvevents hr{
+  /* #pvevents hr{
    border-top: 5px solid #2c7a7c;
-  }
+  } */
 
   .pvrating {
-    
+    margin-left: 15vh;
     margin-top: 12vh;
   }
  

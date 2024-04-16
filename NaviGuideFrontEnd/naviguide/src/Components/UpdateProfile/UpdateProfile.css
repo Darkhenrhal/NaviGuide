@@ -1,0 +1,37 @@
+.subtopicitemupdate{
+    font-weight: 500;
+    color: #1a3a4e;
+    margin-bottom: 0;
+    font-size: large;
+  }
+
+#pdbtnupdate {    
+    align-self: center;
+    margin: 0 10px;
+    padding: 1.2vh 2vh;
+    background: #38A3A5;
+    width: 60%;
+    border-radius: 25px;
+    border: 0px;
+    color: #E3F1E7;
+    font-size: 18px;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: background-color 0.5s, transform 0.5s ease;
+}
+
+
+#pdbtnupdate:hover { 
+  background: #2c7a7c; 
+  transform: scale(1.05); 
+}
+
+
+#pdbtnupdate:active {
+    transform: scale(0.95); 
+    background: #38A3A5;
+
+
+}
+
+  

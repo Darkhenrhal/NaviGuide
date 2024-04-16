@@ -52,7 +52,7 @@ const EventsView =()=>{
             </div>
             
         </div>
-    )
+    );
 
 }
 

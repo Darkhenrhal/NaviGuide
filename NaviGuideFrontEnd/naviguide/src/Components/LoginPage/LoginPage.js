@@ -25,29 +25,27 @@ const LoginForm = () => {
     }
 
     try{
-      const response=await axios.post("http://localhost:8080/api/user/login",{
+      const response=await axios.post("/api/user/login",{
         email:email,
         password:password
       });
 
       if(response.data==="Login Successful"){
-        
         const userData={
           email:email,
         };
         login(userData);
+        console.log("Login Successfull");
         
-        navigate('/ProfilePage');
-        alert("Login Successfull");
+        navigate('/dashboard');
 
-      }else{
-        setError('Invalid Email or Password')
+      }else if(response==="Invalid Email or Password"){
+        setError('Invalid Email or Password');
       }
 
     }catch(error){
       console.error('Login Failed',error);
-      setError('An error Occured during Login, Please try again')
-
+      setError('Invalid Email or Password');
     }
 
   }
@@ -108,8 +106,6 @@ const LoginForm = () => {
 
               </div>
               <div id="button_Login">
-                
-                
                 <input 
                   type="submit" 
                   name="btnSign" 

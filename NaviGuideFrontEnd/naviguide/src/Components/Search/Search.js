@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./search.css";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, Navigate } from "react-router-dom";
+import RateReadOnly from "../RateReadOnly/RateReadOnly";
 
 
 const Search = () => {
@@ -34,21 +35,25 @@ const Search = () => {
 
     return (
         <div id="searchdiv">
-            <form onSubmit={(e)=>handleSearch(e)}>
-                <select id="searchByCat" value={searchedAccCatagory} onChange={(e) => setSearchedAccCatagory(e.target.value)}>
-                    <option value={"Health Awareness"}>Health Awareness</option>
-                    <option value={"Environmental Awareness"}>Environmental Awareness</option>
-                    <option value={"Social Issues Awareness"}>Social Issues Awareness</option>
-                    <option value={"Safety and Security Awareness"}>Safety and Security Awareness</option>
-                    <option value={"Educational Awareness"}>Educational Awareness</option>
-                    <option value={"Cultural Awareness"}>Cultural Awareness</option>
-                    <option value={"Workplace Awareness"}>Workplace Awareness</option>
-                    <option value={"Human Rights Awareness"}>Human Rights Awareness</option>
-                    <option value={"Technology and Digital Literacy Awareness"}>Technology and Digital Literacy Awareness</option>
-                    <option value={"Political and Civic Awareness"}>Political and Civic Awareness</option>
-                </select>
-                <input type="submit" value="Search by Category" />
-            </form>
+            <div id="searchformdiv">
+                <form id="searchform" onSubmit={(e)=>handleSearch(e)}>
+                    <select id="searchByCat" value={searchedAccCatagory} onChange={(e) => setSearchedAccCatagory(e.target.value)}>
+                        <option value={"Health Awareness"}>Health Awareness</option>
+                        <option value={"Environmental Awareness"}>Environmental Awareness</option>
+                        <option value={"Social Issues Awareness"}>Social Issues Awareness</option>
+                        <option value={"Safety and Security Awareness"}>Safety and Security Awareness</option>
+                        <option value={"Educational Awareness"}>Educational Awareness</option>
+                        <option value={"Cultural Awareness"}>Cultural Awareness</option>
+                        <option value={"Workplace Awareness"}>Workplace Awareness</option>
+                        <option value={"Human Rights Awareness"}>Human Rights Awareness</option>
+                        <option value={"Technology and Digital Literacy Awareness"}>Technology and Digital Literacy Awareness</option>
+                        <option value={"Political and Civic Awareness"}>Political and Civic Awareness</option>
+                    </select>
+                    <input type="submit" value="Search by Category" />
+                </form>
+                <RateReadOnly userRating={4.5} />
+            </div>
+            
 
             <div id="searchResults">
                 {error && <p>{error}</p>}
@@ -97,7 +102,7 @@ const Search = () => {
                         
                     </ul>
                 ) : (
-                    <p>No results found</p>
+                    <p></p>
                 )}
             </div>
 

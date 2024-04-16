@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -17,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "users")
-public class Users {
+public class Users implements Serializable {
     @Id
     private String userId;
     private String firstName;
@@ -28,13 +29,69 @@ public class Users {
     private String email;
     private String accCategory;
     private String proffesion;
-    @Field("user_name")
+    @Field("userName")
     private String userName;
     private String password;
     private String address;
     private String userType;
     private String category;
+    private String facebook;
+    private String youtube;
+    private String linkedin;
+    private String aboutme;
+    private String propic;
+    private String coverpic;
     private float userRating;
+    private List<Events> events;
+
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getYoutube() {
+        return youtube;
+    }
+
+    public void setYoutube(String youtube) {
+        this.youtube = youtube;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    public String getAboutme() {
+        return aboutme;
+    }
+
+    public void setAboutme(String aboutme) {
+        this.aboutme = aboutme;
+    }
+
+    public String getPropic() {
+        return propic;
+    }
+
+    public void setPropic(String propic) {
+        this.propic = propic;
+    }
+
+    public String getCoverpic() {
+        return coverpic;
+    }
+
+    public void setCoverpic(String coverpic) {
+        this.coverpic = coverpic;
+    }
 
 
     public String getUserId() {
@@ -70,9 +127,8 @@ public class Users {
     }
 
 
-    private List<Events> events;
 
-    public Users(String userid, String firstName, String lastName, String phoneNumber, String altPhoneNumber, String organizationName, String email, String accCategory, String proffesion, String userName, String password, String userType) {
+    public Users(String userid, String firstName, String lastName, String phoneNumber, String altPhoneNumber, String organizationName, String email, String accCategory, String proffesion, String userName, String password, String userType, String facebook, String youtube, String linkedin, String aboutme, String propic, String coverpic) {
         this.userId = userid;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -85,6 +141,12 @@ public class Users {
         this.userName = userName;
         this.password = password;
         this.userType = userType;
+        this.facebook= facebook;
+        this.linkedin=linkedin;
+        this.youtube=youtube;
+        this.aboutme=aboutme;
+        this.propic=propic;
+        this.coverpic=coverpic;
     }
 
     public String getUserid() {

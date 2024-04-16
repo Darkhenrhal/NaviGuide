@@ -5,10 +5,10 @@ import axios from 'axios';
 import "./ProfileView.css";
 import { Link } from "react-router-dom";
 import EventsView from "../EventsView/EventsView";
-//import RateReadOnly from "../RateReadOnly/RateReadOnly";;
+import RateReadOnly from "../RateReadOnly/RateReadOnly";;
 
 const ProfileView = () => {
-  const { userName } = useParams();
+  const {userName} = useParams();
   const [user, setUser] = useState(null);
   const [events,setEvents]=useState(null);
   const [error, setError] = useState(null);
@@ -20,17 +20,17 @@ const ProfileView = () => {
         setUser(responseuser.data);
 
       } catch (error) {
+        setError('An error occurred while fetching user data. Please try again.');
         console.error('Failed to fetch user data: ', error);
-        setError('An error occurred while fetching user data. Please try again.')
       }
     };
 
     
-    //check here I added the Even loader!!!
+    //check here I added the Event loader!!!
 
     const handleEventSearch=(e)=>{
       e.preventDefault();
-      fetch(`http://localhost:8080/api/event//getevents/${userName}`)
+      fetch(`http://localhost:8080/api/event/getevents/${userName}`)
           .then(responseevent =>{
             if(responseevent.ok){
               throw new Error('Failed to fetch data');
@@ -93,9 +93,9 @@ const ProfileView = () => {
           </div> 
           <div className="pvrating">
             <div id="pvratecard">
-              <h1>Rating</h1>
+              
               <div>
-                {/* <RateReadOnly/> */}
+                <RateReadOnly userRating={user.userRating} />
               </div>
             </div>
           </div>

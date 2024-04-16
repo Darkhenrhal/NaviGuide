@@ -5,8 +5,6 @@ import "./RegisterPage.css";
 import validator from "validator";
 import { useNavigate } from "react-router-dom";
 
-//import bcrypt from 'bcryptjs';
-
 const RegisterForm = () => {
   const navigate=useNavigate();
   const [firstName, setfirstName] = useState('');//ok
@@ -22,15 +20,26 @@ const RegisterForm = () => {
   const [userType,setuserType]=useState('');//pk
   const [userName,setuserName]=useState('');//ok
   const [accCategory,setaccCategory]=useState('');//ok
-  const [accRating,setaccRating]=useState(0);
+  const [accRating,setaccRating]=useState('');//ok
+  const [facebook,setFacebook]=useState('');//ok
+  const [linkedin,setLinkedin]=useState('');//ok
+  const [youtube,setYoutube]=useState('');//ok
+  const [aboutme,setAboutMe]=useState('');//ok
+  const [propic,setProfilePicture]=useState('');//ok
+  const [coverpic,setCoverPicture]=useState('');//ok
   const [Users, setUsers] = useState([]);
   const [errors, setErrors] = useState([]);
 
   const registerValidation = async (e) => {
     e.preventDefault();
-
     setErrors([]);
 
+    setFacebook(" ");
+    setYoutube(" ");
+    setLinkedin(" ");
+    setAboutMe(" ");
+    setProfilePicture(" ");
+    setCoverPicture(" ");
     
 
     if (!address || !firstName || !email || !password ||!lastName||!phoneNumber||!repassword||!proffesion ||!lastName || !userName) {
@@ -66,10 +75,8 @@ const RegisterForm = () => {
 
     if(userType==="stakeholder"){
       setaccRating(null);
-      alert(accRating);
     }else{
       setaccRating(0);
-      alert(accRating);
     }
     console.log('No error in Empty inputs');
     save(e);
@@ -85,19 +92,24 @@ const RegisterForm = () => {
         "http://localhost:8080/api/user/getallusers");
            setUsers(result.data);
            console.log(result.data);
+
+
+           
     }
 
     async function save(e)
-    {
+    { 
+      
+
         e.preventDefault();
         // Check if the username or email already exists
-        const existingUser = await axios.get(`http://localhost:8080/api/user/getuser/${userName}`);
+        const existingUser = await axios.get(`api/user/getuser/${userName}`);
         if (existingUser.data) {
           alert('Username is already taken. Please choose a different one.');
           return;
         }
 
-        const existingEmailUser = await axios.get(`http://localhost:8080/api/user/getuserbyemail/${email}`);
+        const existingEmailUser = await axios.get(`api/user/getuserbyemail/${email}`);
         if (existingEmailUser.data) {
           alert('Email is already registered. Please use a different one.');
           return;
@@ -117,8 +129,19 @@ const RegisterForm = () => {
                 address: address,
                 accCategory: accCategory,
                 userType: userType,
-                accRating: accRating 
+                accRating: accRating,
+                facebook:facebook,
+                youtube:youtube,
+                linkedin:linkedin,
+                propic:propic,
+                coverpic:coverpic,
+                aboutme:aboutme
+                
+
               });
+
+              alert("firstName: firstName,"
+            );
               
             if(response.status===200){
               //Registration is successfull here
@@ -136,6 +159,12 @@ const RegisterForm = () => {
               setaddress("");
               setuserType("");
               setaccRating(0);
+              setFacebook("");
+              setYoutube("");
+              setLinkedin("");
+              setAboutMe("");
+              setProfilePicture("");
+              setCoverPicture("");
               
               Load();
 
