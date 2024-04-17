@@ -269,6 +269,13 @@ public class Users implements Serializable {
                 ", password='" + password + '\'' +
                 ", rePassword='" + address + '\'' +
                 ", userType='" + userType + '\'' +
+                ", propic="+propic+'\'' +
+                ", coverpic="+coverpic+'\'' +
+                ", aboutme="+aboutme+'\'' +
+                ", facebook="+facebook+'\'' +
+                ", youtube="+youtube+'\'' +
+                ", linkedin="+linkedin+'\'' +
+
                 '}';
     }
 

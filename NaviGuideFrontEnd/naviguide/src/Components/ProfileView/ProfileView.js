@@ -86,8 +86,11 @@ const ProfileView = () => {
             </div>
             
             <div id="pvprofilelinks">
-              <Link to={`*`} id="fblink">Facebook</Link>
+              <Link to={user.facebook} className="fblink">Facebook</Link>
+              <Link to={user.linkedin} className="fblink">LinkedIn</Link>
+              <Link to={user.youtube} className="fblink">Youtube</Link>
             </div>
+            
             
 
           </div> 

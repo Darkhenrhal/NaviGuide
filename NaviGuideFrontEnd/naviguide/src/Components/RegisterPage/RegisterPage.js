@@ -33,13 +33,15 @@ const RegisterForm = () => {
   const registerValidation = async (e) => {
     e.preventDefault();
     setErrors([]);
-
-    setFacebook(" ");
-    setYoutube(" ");
-    setLinkedin(" ");
-    setAboutMe(" ");
-    setProfilePicture(" ");
-    setCoverPicture(" ");
+    const propicurl= "https://drive.google.com/file/d/1HOMW1A3dnu7IQkQqCgtgzYGMd3QcTxP-/view?usp=";
+    const coverpicurl="https://drive.google.com/file/d/117j3Fc4Owr3L4TIsPmFJssWmnCJkNvHx/view?usp=sharing";
+    const notawailable="Not Provided";
+    setFacebook(notawailable);
+    setYoutube(notawailable);
+    setLinkedin(notawailable);
+    setAboutMe(notawailable);
+    setProfilePicture(propicurl);
+    setCoverPicture(coverpicurl);
     
 
     if (!address || !firstName || !email || !password ||!lastName||!phoneNumber||!repassword||!proffesion ||!lastName || !userName) {
@@ -80,7 +82,6 @@ const RegisterForm = () => {
     }
     console.log('No error in Empty inputs');
     save(e);
-    navigate('/login')
     }
 
       useEffect(()=>{
@@ -91,10 +92,7 @@ const RegisterForm = () => {
       const result=await axios.get(
         "http://localhost:8080/api/user/getallusers");
            setUsers(result.data);
-           console.log(result.data);
-
-
-           
+           console.log(result.data);    
     }
 
     async function save(e)
@@ -115,7 +113,7 @@ const RegisterForm = () => {
           return;
         }
         try
-            {
+            {  
               const response = await axios.post("http://localhost:8080/api/user/save", {
                 firstName: firstName,
                 lastName: lastName,
@@ -130,18 +128,17 @@ const RegisterForm = () => {
                 accCategory: accCategory,
                 userType: userType,
                 accRating: accRating,
-                facebook:facebook,
-                youtube:youtube,
-                linkedin:linkedin,
-                propic:propic,
-                coverpic:coverpic,
-                aboutme:aboutme
+                facebook:"Not Provided",
+                youtube:"Not Provided",
+                linkedin:"Not Provided",
+                coverpic:'https://drive.google.com/thumbnail?id=117j3Fc4Owr3L4TIsPmFJssWmnCJkNvHx&sz=w1000',
+                propic: 'https://drive.google.com/thumbnail?id=1HOMW1A3dnu7IQkQqCgtgzYGMd3QcTxP-&sz=w1000',
+                aboutme:"Not Provided"
+
                 
 
               });
-
-              alert("firstName: firstName,"
-            );
+             
               
             if(response.status===200){
               //Registration is successfull here
@@ -167,6 +164,8 @@ const RegisterForm = () => {
               setCoverPicture("");
               
               Load();
+              navigate('/login')
+
 
             }else{
               alert('Unexpected response status :',response.status);

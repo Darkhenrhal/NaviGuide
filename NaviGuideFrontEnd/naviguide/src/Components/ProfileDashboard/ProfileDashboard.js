@@ -5,8 +5,10 @@ import RateReadOnly from "../RateReadOnly/RateReadOnly";
 import "./ProfileDashboard.css";
 import MyDetails from "../MyDetails/MyDetails";
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
+import DashboardEventView from "../DashboardEventView/DashboardEventView";
 
-
+const defaultProfilePic = 'https://drive.google.com/file/d/1sYUM56VrjbRmRXMyzSE62Aaz_unXyVhi/view?usp=sharing'; 
+const defaultCoverPic = 'https://drive.google.com/file/d/17DNvqLYTaDCpEqikBMZLs_tt95wYrgud/view?usp=sharing'; 
 
 const ProfileDashBoard = () => {
   const [user, setUser] = useState(null);
@@ -26,14 +28,16 @@ const ProfileDashBoard = () => {
     fetchUserData();
   }, []);
 
-  const handleUpdateUser = async (updatedUser) => {
-    try {
-        await axios.put('/api/user/profile', updatedUser);
-        setUser(updatedUser);
-    } catch (error) {
-        console.error('Failed to update user data: ', error);
-    }
-  };
+  // const handleUpdateUser = async (updatedUser) => {
+  //   try {
+  //       await axios.put('/api/user/profile', updatedUser);
+  //       setUser(updatedUser);
+  //   } catch (error) {
+  //       console.error('Failed to update user data: ', error);
+  //   }
+  // };
+
+
   const handleButtonClick = (buttonIndex) => {
      setActiveButton(buttonIndex); 
   };
@@ -52,15 +56,20 @@ const ProfileDashBoard = () => {
     <section id="sectiondashboard">
       <div className="profileViewContainer">
         <div id="pvcover">
-          <img id="pvcoverimg" src="https://wallpapers.com/images/hd/mountains-background-kfpok0pdo9yd6ha7.jpg" alt="Cover" />
+          <img id="pvcoverimg" src={user.coverpic} alt="Cover" 
+            onError={(e) => {
+              e.target.src = defaultCoverPic;
+          }}
+          />
         </div>
         <div className="pvcontainer">
           <div className="image">
-            <img id="pvuserimg" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" className="rounded ml-5" width="155" alt="User" />
-            <div id="pvcontacts">
-              <h5>{user.phoneNumber}</h5>
-              <h5>{user.email}</h5>
-            </div>
+            <img id="pvuserimg" src={user.propic} className="rounded ml-5" width="155" alt="User" 
+              onError={(e) => {
+                e.target.src = defaultProfilePic;
+            }}
+            />
+            
           </div>
           <div className="pvdetails">
             <div id="pvusername">
@@ -68,9 +77,15 @@ const ProfileDashBoard = () => {
             </div>
             <div id="pvposition">
               <h3>{user.proffesion}</h3>
+              <div id="aboutmedisplay">
+               <p>{user.aboutme}</p>  
+              </div> 
             </div>
+
             <div id="pvprofilelinks">
-              <Link to={`*`} id="fblink">Facebook</Link>
+              <Link to={user.facebook} className="fblink">Facebook</Link>
+              <Link to={user.linkedin} className="fblink">LinkedIn</Link>
+              <Link to={user.youtube} className="fblink">Youtube</Link>
             </div>
           </div>
           <div className="pvrating">
@@ -82,8 +97,8 @@ const ProfileDashBoard = () => {
         <hr/>
       </div>
       <div>
+       
       <div id="pvtabbtns">
-          <hr/>
 
           {['My Details', 'Update Profile', 'My Events'].map((buttonText, index) => (
             <button
@@ -106,9 +121,9 @@ const ProfileDashBoard = () => {
             user={user}    
           />
         )}
-        {/* {activeButton === 2 &&(
-          //add code for Edit Profile
-        )} */}
+        {activeButton === 2 &&(
+          <DashboardEventView/>
+        )}
         
       </div>
     </section>

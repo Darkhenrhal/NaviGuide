@@ -1,5 +1,6 @@
 package com.naviguide.naviguide.controller;
 
+import com.naviguide.naviguide.model.Resources;
 import com.naviguide.naviguide.model.Users;
 import com.naviguide.naviguide.service.UserService;
 import jakarta.servlet.http.HttpSession;
@@ -11,7 +12,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -31,6 +35,30 @@ public class MainController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
+
+    //Update User (Working)
+    @PutMapping(value = "/updateuser/{userName}")//working
+    public Users updateUser(@RequestBody Users user,@PathVariable(name="userName") String userName){
+        user.setUserName(userName);
+        userServices.deleteUser(userName);
+
+        userServices.update(user);
+        return user;
+    }
+
+    //Add images to google drive
+    @PostMapping("/uploadimages")
+    public Object handleFileUpload(@RequestParam ("image") MultipartFile file) throws IOException {
+        if(file.isEmpty()){
+            return "File is empty";
+        }
+        File tempFile = File.createTempFile("temp",null);
+        file.transferTo(tempFile);
+        Resources res=userServices.uploadImageToDrive(tempFile);
+        System.out.println(res);
+        return res;
+    }
 
     //Get all users (Working)
     @GetMapping(value = "/getallusers")
@@ -64,14 +92,6 @@ public class MainController {
         return userServices.getAllUsersByOrg(organizationName);
     }
 
-    //Update User (Working)
-    @PutMapping(value = "/updateuser/{userName}")//working
-    public Users updateUser(@RequestBody Users user,@PathVariable(name="userName") String userName){
-        user.setUserName(userName);
-        userServices.deleteUser(userName);
-        userServices.update(user);
-        return user;
-    }
 
     //Delete User (Working)
     @DeleteMapping(value = "/deleteuser/{userName}")//working

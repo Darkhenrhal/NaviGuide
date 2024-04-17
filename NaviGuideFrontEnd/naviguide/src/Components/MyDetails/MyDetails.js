@@ -49,12 +49,16 @@ const MyDetails = ({user}) => {
                 <h1>Social Media</h1>
 
                     <div className="topics">
-                        <h2 className="topicitem">Account Category</h2>
-                        <h3>{user.accCategory}</h3>
+                        <h2 className="topicitem">Facebook</h2>
+                        <h3 className="topicitemsocial">{user.facebook}</h3>
                     </div>
                     <div className="topics">
-                        <h2 className="topicitem">Account Type</h2>
-                        <h3>{user.userType}</h3>
+                        <h2 className="topicitem">Youtube</h2>
+                        <h3 className="topicitemsocial">{user.youtube}</h3>
+                    </div>
+                    <div className="topics">
+                        <h2 className="topicitem">LinkedIn</h2>
+                        <h3 className="topicitemsocial">{user.linkedin}</h3>
                     </div>
                 </div> 
             </div>

@@ -4,35 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const EventsView =()=>{
-    //const {userName}=useParams();
- 
-    // const [userName,setUserName]=useState("");
-    // consta[userEvents,setUserEvents]=useState([]);
-    // const [error,setError]=useState(null);
-
     
-    // const handleEvents=(e)=>{
-    //     e.preventDefault();
-    //     fetch(`http://localhost:8080/api/event/getevents/${userName}`)
-    //         .then(response => {
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to fetch data');
-    //             }
-    //             return response.json();
-    //         })
-    //         .then(data => {
-    //             setUserEvents(data);
-    //             setError(null);
-               
-    //         })
-    //         .catch(error => {
-    //             console.error('Error fetching data:', error);
-    //             setError('Failed to fetch data. Please try again.');
-    //         });
-
-            
-    //};
-
     return(
         <div id="eventcard">
             <div id="eventName">
@@ -47,7 +19,7 @@ const EventsView =()=>{
                   mollit anim id est laborum.</p>
             </div>
             <div id="eventImages">
-                <img  src="https://wallpapers.com/images/hd/mountains-background-kfpok0pdo9yd6ha7.jpg"/>
+                <img  src="https://drive.google.com/thumbnail?id=1KgigAnjd0aXzwZDsrEYDzH5bgY8Qnjsy&sz=w1000"/>
             
             </div>
             

@@ -33,6 +33,7 @@
     border:20px ;
     border-color: black;
     box-shadow:  0 0 10px 10px rgba(255, 255, 255, 0.25);
+    
 }
 
 #pvcontacts h5{
@@ -102,8 +103,9 @@
     transform: scale(0.95); /* scale down slightly when clicked */
   }
 
-  #pvprofilelinks #fblink{
+  #pvprofilelinks .fblink{
     text-decoration: none;
+    margin-right: 20px;
     color: #5a5a5b;
   }
 

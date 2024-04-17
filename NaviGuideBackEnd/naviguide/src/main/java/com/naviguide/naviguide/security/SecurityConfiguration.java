@@ -26,8 +26,10 @@ public class SecurityConfiguration {
                         .requestMatchers(new AntPathRequestMatcher("/api/user/save")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/event/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/event/save")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/user/profile")).permitAll()
                         .anyRequest().authenticated());
         return http.build();
+
     }
 
     @Bean
@@ -41,4 +43,6 @@ public class SecurityConfiguration {
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class).build();
     }
+
+
 }

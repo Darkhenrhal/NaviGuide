@@ -47,6 +47,13 @@
   margin-bottom: 1vh;
 }
 
+.topicitemsocial{
+  font-weight: 600;
+  color: #112d3f;
+  margin-bottom: 1vh;
+  font-size: 15px;
+}
+
 .subtopicitem{
   font-weight: 500;
   color: #1a3a4e;
