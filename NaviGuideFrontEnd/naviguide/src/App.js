@@ -2,12 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginForm from './Components/LoginPage/LoginPage';
 import RegisterForm from './Components/RegisterPage/RegisterPage';
-import ProfilePage from './Components/ProfileDashboard/ProfileDashboard';
+import ProfileDashBoard from './Components/ProfileDashboard/ProfileDashboard';
 import { AuthProvider } from './AuthContext';
 import Search from './Components/Search/Search';
 import ProfileView from './Components/ProfileView/ProfileView';
 import RateUser from './Components/RateUser/RateUser';
-
+import EventsView from './Components/EventsView/EventsView';
+import DashboardEventView from './Components/DashboardEventView/DashboardEventView';
 const App = () => {
   return (
     <Router>
@@ -15,17 +16,22 @@ const App = () => {
       
         <Routes>
 
-          <Route path="/login" element={<AuthProvider><LoginForm /></AuthProvider>} />
+          <Route path="/login" element={<AuthProvider><LoginForm/></AuthProvider>} />
           
           <Route path="/register" element={<RegisterForm />} />
           
           <Route path="/search" element={<Search/>}/>
 
-          <Route path="/profile" element={<AuthProvider><ProfileView/></AuthProvider>}/>
+          <Route path="/dashboard" element={<AuthProvider><ProfileDashBoard/></AuthProvider>}/>
 
           <Route path="/profile/:userName" element={<AuthProvider><ProfileView/></AuthProvider>}/>
 
           <Route path="/rate" element={<RateUser/>}/>
+
+          <Route path='/events' element={<EventsView/>}/>
+          
+          <Route path='/devents' element={<DashboardEventView/>}/>
+
 
         
         </Routes>
