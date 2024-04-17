@@ -28,9 +28,9 @@ const App = () => {
 
           <Route path="/rate" element={<RateUser/>}/>
 
-          <Route path='/events' element={<EventsView/>}/>
+        
           
-          <Route path='/devents' element={<DashboardEventView/>}/>
+         
 
 
         
