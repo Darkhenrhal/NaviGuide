@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.support.PageableExecutionUtils;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,10 +22,11 @@ public class UserServiceImpl implements UserService {
     private MongoTemplate mongoTemplate;
     @Autowired
     private UserRepository userRepository;
-
-
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     @Override
     public String save(Users user){
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user).getUserid();
     }
 
@@ -42,7 +44,6 @@ public class UserServiceImpl implements UserService {
     public List<Users> getAllUsersByOrg(String organizationName) {
         return userRepository.findByorganizationName(organizationName);
     }
-
     @Override
     public Users getByEmail(String email) {
         return userRepository.findByEmail(email);
@@ -84,7 +85,7 @@ public class UserServiceImpl implements UserService {
 
         return userEmails;
     }
-    
+
     @Override
     public Page<Users> search(String firstName, String lastName, String organizationName, String accCategory, String proffesion, Pageable pageable) {
         Query query=new Query().with(pageable);

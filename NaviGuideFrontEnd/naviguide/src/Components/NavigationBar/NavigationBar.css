@@ -1,0 +1,39 @@
+.navBar{
+    background-color: #22577A;
+    width: auto;
+    height: auto;
+    
+  }
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li {
+    float: left;
+  }
+
+  
+  li .link {
+    display: block;
+    color:#C7F9CC;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px; 
+  }
+
+  
+  li a:hover:not(.active) {
+    background-color:#57CC99;
+    color: #22577A;
+    font-weight: 600;
+    
+  }
+
+
+
+  
