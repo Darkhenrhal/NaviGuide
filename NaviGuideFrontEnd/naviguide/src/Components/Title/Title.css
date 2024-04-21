@@ -1,0 +1,33 @@
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    
+    
+}
+
+
+#h1div{
+    
+   
+    color:#032e4b;
+    
+    
+}
+
+#headername{
+    font-size: 80px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+img{
+    height: 90px;
+   
+}
+
+#img{
+    
+    padding-right: 3%;
+}
