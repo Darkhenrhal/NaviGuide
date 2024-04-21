@@ -1,0 +1,46 @@
+.home-section{
+  background: linear-gradient(0deg,#C7F9CC,#57CC99,#80ED99,#38A3A5,#22577a);
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  
+}
+
+#home-navBar{
+  position: absolute;
+  z-index: 100000;
+}
+
+
+#home-title{
+  position: inherit;
+}
+
+#home-search{
+  position: inherit;
+}
+
+#home-slide{
+  position: inherit;
+  margin-bottom: 10%;
+  
+}
+
+
+#home-about{
+  padding-top: 10%;
+  margin-bottom: 5%;
+  position: inherit;
+  
+}
+
+#home-news{
+  margin-top: 10%;
+  margin-bottom: 25%;
+}
+
+#home-contact{
+  position: relative;
+  
+}
+
