@@ -32,7 +32,7 @@ To get started with NaviGuide, follow these simple steps:
 
 **Contributing:**
 
-NaviGuide is an open platform, and we welcome contributions from individuals and organizations interested in promoting community awareness. If you'd like to contribute to the platform by offering your expertise as a resource person or by suggesting improvements, please contact us at contact@email.com.
+NaviGuide is an open platform, and we welcome contributions from individuals and organizations interested in promoting community awareness. If you'd like to contribute to the platform by offering your expertise as a resource person or by suggesting improvements, please contact us at sineth21404@email.com or karunarathneprabodhani@gmail.com.
 
 **Feedback:**
 
