@@ -1,4 +1,4 @@
-#NaviGuide: Community Awareness Program Platform
+# NaviGuide: Community Awareness Program Platform
 
 **Introduction:**
 
