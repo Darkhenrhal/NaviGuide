@@ -46,5 +46,24 @@ For any inquiries or assistance, you can reach us at sineth21404@email.com or ka
 
 Copying without permission is prohibited. please contact sineth21404@gmail.com and karunarathneprabodhani@gmail.com for more information.
 
-© 2024 Sandeepa Sineth. All rights reserved.
+<div>
+   <h2 align="left">Support Me ...</h2>
+   <p align="left">
+        Why We Need Your Support...?
+Your support helps us fund my next big project, cover the costs of materials, and dedicate more time to creating innovative solutions. With your help, We can continue to develop cutting-edge applications and contribute to the ever-evolving field of Computer Science. Every "coffee" you buy us goes a long way in keeping the creativity flowing and the dreams alive.
+   </p>
+  
+  </p>
+  
+</p>
+</div>
+
+<p align="center">
+
+  <a href="https://www.buymeacoffee.com/sineth2140g">
+    <img align="center" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="sineth2140g" />
+  </a>
+</p>
+
+© 2024 SP. All rights reserved.
 
